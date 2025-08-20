@@ -1,0 +1,45 @@
+# include<iostream>
+using namespace std;
+
+double fun(double *salary)
+{
+    *salary = *salary + (*salary / 5); 
+    return *salary; 
+}
+int main()
+{
+    int profit,k=0;
+   double salary,tenure;
+    bool research,pipeline_research;
+    cout<<"Enter Tenure"<<endl;
+    cin>>tenure;
+    cout<<"Enter Profit"<<endl;
+    cin>>profit;
+    cout<<"Any Research Project: "<<endl;
+    cin>>research;
+    cout<<"Any Research Pipeline Project: "<<endl;
+    cin>>pipeline_research;
+    cout<<"Enter Salary"<<endl;
+    cin>>salary;
+    if(tenure>=1)
+    k++;
+    if(profit>100000)
+    k++;
+    if(research==1)
+    k++;
+    if(pipeline_research==1)
+    k++;
+    if(k>=3)
+    {
+       double updatedSalary = fun(&salary);
+        cout << "Updated Salary: " << updatedSalary << endl;
+    }
+    else
+    {
+        cout<<"No Increment"<<endl;
+    }
+    
+    
+    
+
+}
